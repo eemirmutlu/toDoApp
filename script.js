@@ -5,3 +5,17 @@
         <i class="fa-solid fa-trash fa-bounce"></i>
     </div>
 </li> */
+
+const input = document.getElementById("input")
+const btn = document.querySelector("#btn")
+const liste = document.querySelector("#liste")
+
+function toDo() {
+    const li = document.createElement('li')
+    // li.classList.add("d-flex", "justify-content-between", "align-items-center", "bg-warning", "px-3", "rounded-2")
+    li.className = "d-flex justify-content-between align-items-center bg-info px-3 rounded-2"
+    console.log(li)
+
+}
+
+toDo()
