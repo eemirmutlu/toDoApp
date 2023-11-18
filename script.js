@@ -10,10 +10,19 @@ const input = document.getElementById("input")
 const btn = document.querySelector("#btn")
 const liste = document.querySelector("#liste")
 
+btn.addEventListener("click", toDo)
+
+input.addEventListener ("keyup", (element) => {
+    if(element.code === "Enter" || element.code === "NumpadEnter"){
+        toDo()
+    }
+        
+})
+
 function toDo() {
     const li = document.createElement('li')
     // li.classList.add("d-flex", "justify-content-between", "align-items-center", "bg-warning", "px-3", "rounded-2")
-    li.className = "d-flex justify-content-between align-items-center bg-info px-3 rounded-2"
+    li.className = "d-flex justify-content-between align-items-center bg-warning mt-2 px-3 rounded-2"
     console.log(li)
 
     const p = document.createElement("p")
@@ -29,6 +38,18 @@ function toDo() {
     const okay = document.createElement("i")
     okay.setAttribute("class", "fa-solid fa-thumbs-up fa-beat")
 
+    if (input.value != "") {
+        iconDiv.appendChild(okay)
+        iconDiv.appendChild(trash)
+        li.appendChild(p)
+        li.appendChild(iconDiv)
+        liste.appendChild(li)
+    } else {
+        alert("Boş giriş yapamazsın.")
+    }
+
+    input.value = ""
 }
 
-toDo()
+// toDo()
+
